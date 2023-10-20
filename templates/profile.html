@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} | Профиль{% endblock %}
+
+{% block content %}
+        <div>
+                <p>Привет {{ user.username }}!</p>
+                <p>Почта: {{ user.email }}</p>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem">
+                <a href="{% url 'delete_user_confirm' user.pk %}">Удалить профиль</a>
+                <a href="{% url 'edit' user.pk %}">Редактировать профиль</a>
+        </div>
+
+{% endblock %}
